@@ -1,4 +1,5 @@
 import routeDecoratorFactory from "../helpers/decorators/rotueDecoratorFactory";
+import getRoutesConfig, {RoutesConfig} from "../utils/getRoutesConfig";
 
 export function Get(url: string) {
     return routeDecoratorFactory('get', url);
@@ -18,4 +19,14 @@ export function Patch(url: string) {
 
 export function Delete(url: string) {
     return routeDecoratorFactory('delete', url);
+}
+
+export function Use() {
+    return (target: any, key: string, descriptor: PropertyDescriptor) => {
+        const {subControllers}: RoutesConfig = getRoutesConfig(target);
+
+        subControllers.push(descriptor.value());
+
+        return descriptor;
+    };
 }
