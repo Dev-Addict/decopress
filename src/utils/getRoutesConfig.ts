@@ -1,6 +1,6 @@
 import {RequestHandler, RouterOptions} from 'express';
 
-export type Method = 'get' | 'post' | 'put' | 'patch' | 'delete';
+export type Method = 'get' | 'post' | 'put' | 'patch' | 'delete' | 'all';
 
 export interface Route {
     url: string;

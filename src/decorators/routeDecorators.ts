@@ -21,6 +21,10 @@ export function Delete(url: string) {
     return routeDecoratorFactory('delete', url);
 }
 
+export function All(url: string) {
+    return routeDecoratorFactory('all', url);
+}
+
 export function Use() {
     return (target: any, key: string, descriptor: PropertyDescriptor) => {
         const {subControllers}: RoutesConfig = getRoutesConfig(target);
