@@ -1,5 +1,15 @@
 # _Decopress_
 ###### Decopress is a tool to help you write cleaner Express.js code using typescript decorators.
+## _Quick Access_
+* [Installation](https://github.com/Dev-Addict/decopress#installation)
+* [Quick Start](https://github.com/Dev-Addict/decopress#quick-start)
+* [Controller Class](https://github.com/Dev-Addict/decopress#controller-class)
+    * [Controller Decorator](https://github.com/Dev-Addict/decopress#controller-decorator)
+    * [CMiddleware Decorator](https://github.com/Dev-Addict/decopress#cmiddleware-decorator)
+* [Method Decorators](https://github.com/Dev-Addict/decopress#method-decorators)
+    * [Middleware Decorator](https://github.com/Dev-Addict/decopress#middleware-decorator)
+    * [Use Method Decorator](https://github.com/Dev-Addict/decopress#use-method-decorator)
+* [Get Result](https://github.com/Dev-Addict/decopress#get-result)
 ### _Installation_
 * Using **_npm_**: \
 `npm install decopress`
