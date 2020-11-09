@@ -3,6 +3,7 @@ import {RequestHandler, RouterOptions} from 'express';
 export type Method = 'get' | 'post' | 'put' | 'patch' | 'delete';
 
 export interface Route {
+    url: string;
     method: Method;
     stack: RequestHandler[];
 }

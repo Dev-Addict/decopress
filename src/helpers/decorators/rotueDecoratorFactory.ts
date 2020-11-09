@@ -4,7 +4,8 @@ export default function routeDecoratorFactory(method: Method, url: string) {
     return (target: any, key: string, descriptor: PropertyDescriptor) => {
         const {routes}: RoutesConfig = getRoutesConfig(target);
 
-        routes[url] = {
+        routes[key] = {
+            url,
             method,
             stack: [descriptor.value]
         };
