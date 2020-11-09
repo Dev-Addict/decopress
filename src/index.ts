@@ -1,5 +1,5 @@
 export * from "./decorators/routeDecorators";
-export * from "./decorators/routeMiddlewareDecorator";
-export * from "./decorators/controllerDecorator";
-export * from "./decorators/controllerMiddlewareDecorator";
-export * from "./utils/getRoutesConfig";
+export {default as Middleware} from "./decorators/routeMiddlewareDecorator";
+export {default as Controller} from "./decorators/controllerDecorator";
+export {default as CMiddleware} from "./decorators/controllerMiddlewareDecorator";
+export {default as setRoutes} from "./utils/setRoutes";
