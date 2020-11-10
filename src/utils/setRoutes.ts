@@ -29,7 +29,7 @@ interface IRouter {
     use: (path: string, handler: RequestHandler) => void;
 }
 
-const setRoutes = (controller: RoutesConfigClass, router: IRouter) => {
+const setRoutes = (controller: any, router: IRouter) => {
     const controllerRouter = convertToRouter(controller);
 
     router.use(controller.__routes_config__!.url, controllerRouter);

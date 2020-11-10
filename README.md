@@ -175,12 +175,42 @@ class ExampleController {
 getting results is easy in decopress just you have to import **setRoutes** and then **setRoutes** accept to arguments the first one is instance of your controller class and the second one is either instance of Router from express package or your app.
 ```
 import express from 'express';
-import {setRoutes} from 'decopress';
+import {setRoutes, RoutesConfigClass} from 'decopress';
     
 const app = express();
 
 ...
 
 // I'm using ExampleController from top examples
-setRoutes(new ExampleController(), app);
+setRoutes(<RoutesConfigClass>new ExampleController(), app);
+```
+### _Types_
+#### _Method Type_
+**Method** type is the available types you can use in the **Route** type.
+```
+type Method = 'get' | 'post' | 'put' | 'patch' | 'delete' | 'all';
+```
+#### _Route Type_
+**Route** type is the return type of **method** decorators. it contains a url of type string witch is provided url. it also contains a method witch is the selected rest method for the route and it contains stack witch represents middleware and the filnal method.
+```
+interface Route {
+    url: string;
+    method: Method;
+    stack: RequestHandler[];
+}
+```
+#### _RouteConfig Type_
+**RouteConfig** Type is a type that represents the data of Controller. it contains the provided url in url property. it contains provided route configs in RouteConfigProperty. it contains the route object. it also contains the controller middleware and sub controllers.
+```
+import {RouterOptions} from 'express';
+
+interface RoutesConfig {
+    url: string;
+    routerOptions?: RouterOptions;
+    routes: {
+        [key: string]: Route;
+    };
+    middleware: RequestHandler[];
+    subControllers: RoutesConfigClass[];
+}
 ```
