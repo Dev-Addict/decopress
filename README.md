@@ -1,5 +1,6 @@
 # _Decopress_
 ###### Decopress is a tool to help you write cleaner Express.js code using typescript decorators.
+Please if you need a feature that is not supported by decopress and its related to decorators and express open an issue in github and ask for this feature.
 ## _Quick Access_
 * [Installation](https://github.com/Dev-Addict/decopress#installation)
 * [Quick Start](https://github.com/Dev-Addict/decopress#quick-start)

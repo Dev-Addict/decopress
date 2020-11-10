@@ -8,14 +8,15 @@ export const convertToRouter = (controller: RoutesConfigClass): Router => {
     if (!controller.__routes_config__.url)
         throw new Error('Invalid controller: The url doesn\'t exist on __route_config object on controller');
 
-    const router = Router() ;
-    const routes = Object.values(controller.__routes_config__.routes);
+    const router = Router();
 
+    router.use(...controller.__routes_config__.middleware);
+
+    const routes = Object.values(controller.__routes_config__.routes);
     for (const {url, method, stack} of routes)
         router[method](url, ...stack);
 
     const subControllers = Object.values(controller.__routes_config__.subControllers);
-
     for (const subController of subControllers) {
         const subRouter = convertToRouter(subController);
         router.use(subController.__routes_config__!.url, subRouter);
