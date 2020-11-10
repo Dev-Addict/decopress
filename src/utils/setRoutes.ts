@@ -10,7 +10,8 @@ export const convertToRouter = (controller: RoutesConfigClass): Router => {
 
     const router = Router();
 
-    router.use(...controller.__routes_config__.middleware);
+    for (const m of controller.__routes_config__.middleware)
+        router.use(m);
 
     const routes = Object.values(controller.__routes_config__.routes);
     for (const {url, method, stack} of routes)
